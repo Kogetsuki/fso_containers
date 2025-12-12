@@ -1,0 +1,13 @@
+Script started on 2025-12-10 15:56:49+01:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="120" LINES="30"]
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+[?2004h]0;kogetsuki@DESKTOP-VP2BI0M: ~[01;32mkogetsuki@DESKTOP-VP2BI0M[00m:[01;34m~[00m$ exit\[Kdocker[2Pexit\[K[Kdocker container run -it ubuntun [K[K bash
+[?2004l[?2004h]0;root@c9942a8de854: /root@c9942a8de854:/# mkdir -p /usr/app/    src/apop  o p
+[?2004l[?2004h]0;root@c9942a8de854: /root@c9942a8de854:/# touch /usr/src/app/index,js   .js
+[?2004l[?2004h]0;root@c9942a8de854: /root@c9942a8de854:/# [Kexit
+[?2004lexit
+[?2004h]0;kogetsuki@DESKTOP-VP2BI0M: ~[01;32mkogetsuki@DESKTOP-VP2BI0M[00m:[01;34m~[00m$ exit
+[?2004lexit
+
+Script done on 2025-12-10 15:58:09+01:00 [COMMAND_EXIT_CODE="0"]

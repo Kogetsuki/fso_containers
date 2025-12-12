@@ -10,20 +10,16 @@ if (!REDIS_URL) {
     console.log('No REDIS_URL set, Redis is disabled')
     return null
   }
-
   getAsync = redisIsDisabled
   setAsync = redisIsDisabled
-}
-
-else {
+} else {
   const client = redis.createClient({
     url: REDIS_URL
   })
-
+    
   getAsync = promisify(client.get).bind(client)
-  setAsync = promisify(client.set).bind(client)
+  setAsync = promisify(client.set).bind(client)    
 }
-
 
 module.exports = {
   getAsync,

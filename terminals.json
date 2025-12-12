@@ -1,0 +1,28 @@
+[
+  {
+    "name": "git",
+    "icon": "github-inverted",
+    "cwd": "${workspaceFolder}",
+    "show": true
+  },
+  {
+    "name": "npm",
+    "icon": "package",
+    "splitWith": "git",
+    "cwd": "${workspaceFolder}",
+    "show": false
+  },
+  {
+    "name": "client",
+    "icon": "browser",
+    "cwd": "${workspaceFolder}",
+    "show": true
+  },
+  {
+    "name": "server",
+    "splitWith": "client",
+    "icon": "server",
+    "cwd": "${workspaceFolder}",
+    "show": false
+  }
+]
