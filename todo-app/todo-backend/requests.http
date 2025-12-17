@@ -12,6 +12,5 @@ POST http://localhost:3000/todos
 Content-Type: application/json
 
 {
-  "text": "New Test added_todo",
-  "done": true
+  "text": "Test counter"
 }
