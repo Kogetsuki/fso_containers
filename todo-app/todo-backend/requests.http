@@ -1,6 +1,17 @@
+### Update todo
 PUT http://localhost:3000/todos/693c284c2ace99e2b09dc29d
 Content-Type: application/json
 
 {
   "text": "Updated text"
+}
+
+
+### POST new todo
+POST http://localhost:3000/todos
+Content-Type: application/json
+
+{
+  "text": "New Test added_todo",
+  "done": true
 }
