@@ -9,9 +9,11 @@ const TodoList = ({ todos, deleteTodo, completeTodo }) => {
     completeTodo(todo)
   }
 
+  const safeTodos = Array.isArray(todos) ? todos : []
+
   return (
     <>
-      {todos.map(todo => {
+      {safeTodos.map((todo, idx) => {
         const doneInfo = (
           <>
             <span>This todo is done</span>
@@ -34,9 +36,9 @@ const TodoList = ({ todos, deleteTodo, completeTodo }) => {
         )
 
         return (
-          <div style={{ display: 'flex', justifyContent: 'space-between', maxWidth: '70%', margin: 'auto' }}>
+          <div key={todo._id || idx} style={{ display: 'flex', justifyContent: 'space-between', maxWidth: '70%', margin: 'auto' }}>
             <span>
-              {todo.text} 
+              {todo.text}
             </span>
             {todo.done ? doneInfo : notDoneInfo}
           </div>
