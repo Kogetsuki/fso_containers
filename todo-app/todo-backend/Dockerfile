@@ -2,6 +2,12 @@ FROM node:20
 
 WORKDIR /usr/src/app
 
-COPY ./index.js ./index.js
+COPY package*.json ./
 
-CMD node index.js
+RUN npm install --production
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]

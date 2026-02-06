@@ -23,7 +23,7 @@ FROM node:20 AS build
 
 WORKDIR /usr/src/app
 
-ENV VITE_BACKEND_URL=http://host.docker.internal:3000
+ENV VITE_BACKEND_URL=/api
 
 COPY --from=test /usr/src/app ./
 
