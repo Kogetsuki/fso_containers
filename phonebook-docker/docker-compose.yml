@@ -1,0 +1,51 @@
+services:
+  nginx:
+    image: nginx:1.27-alpine
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - phonebook-network
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      - MONGODB_URI=mongodb://mongo:27017/phonebook
+      - PORT=3001
+    depends_on:
+      - mongo
+    networks:
+      - phonebook-network
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    networks:
+      - phonebook-network
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:7.0
+    environment:
+      - MONGO_INITDB_DATABASE=phonebook
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - phonebook-network
+    restart: unless-stopped
+
+volumes:
+  mongo_data:
+
+networks:
+  phonebook-network:
+    driver: bridge
